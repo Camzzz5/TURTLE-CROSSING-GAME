@@ -10,7 +10,7 @@ screen.setup(width=600, height=600)
 screen.tracer(0)
 
 
-
+scoreboard = Scoreboard()
 carmanager = CarManager()
 tim = Player()
 screen.listen()
@@ -27,15 +27,12 @@ while game_is_on:
     for car in carmanager.all_cars:
         if car.distance(tim) <=20:
             game_is_on = False
+            scoreboard.game_over()
             
     if tim.ycor() > 280:
         tim.reset()
         carmanager.level_up()
+        scoreboard.update_scoreboard()
         
-        
     
-    
-    
-
-
 screen.exitonclick()
