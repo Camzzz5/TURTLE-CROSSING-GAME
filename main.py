@@ -27,9 +27,15 @@ while game_is_on:
     for car in carmanager.all_cars:
         if car.distance(tim) <=20:
             game_is_on = False
+            
+    if tim.ycor() > 280:
+        tim.reset()
+        carmanager.level_up()
+        
+        
     
     
-    tim.reset()
+    
 
 
 screen.exitonclick()

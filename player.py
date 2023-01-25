@@ -12,10 +12,9 @@ class Player(Turtle):
         self.pu()
         self.goto(STARTING_POSITION)
         
-    
+        
     def reset(self):
-        if self.ycor() >= FINISH_LINE_Y:
-            self.goto(STARTING_POSITION)
+        self.goto(STARTING_POSITION)
             
         
     def up(self):
